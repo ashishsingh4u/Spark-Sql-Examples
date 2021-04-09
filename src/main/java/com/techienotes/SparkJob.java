@@ -95,7 +95,8 @@ class SparkJob {
     private void initialize(Properties properties) {
 
         String sparkMaster = properties.getProperty("spark.master");
-        SparkConf conf = new SparkConf().setAppName("Spark-SQL-Example");
+        SparkConf conf = new SparkConf().setAppName("Spark-SQL-Example")
+                .setMaster(sparkMaster);
         SparkSession sparkSession = SparkSession
                 .builder()
                 .config(conf)
