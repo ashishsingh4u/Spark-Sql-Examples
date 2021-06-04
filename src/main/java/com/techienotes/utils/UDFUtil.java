@@ -17,9 +17,9 @@ public class UDFUtil {
 
     public void registerColumnDoubleUdf() {
 
-        this.sqlContext.udf().register(COLUMN_DOUBLE_UDF_NAME, (UDF1<String, Integer>)
+        this.sqlContext.udf().register(COLUMN_DOUBLE_UDF_NAME, (UDF1<Integer, Integer>)
                 (columnValue) -> {
-                    return Integer.parseInt(columnValue) * 2;
+                    return columnValue * 2;
                 }, DataTypes.IntegerType);
     }
 

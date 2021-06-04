@@ -15,7 +15,9 @@ public class FileUtil {
 
     public Dataset<FileInputLine> getDatasetFromFile(String filePath) {
 
-        Dataset<FileInputLine> fileDataSet = this.sparkSession.read().option("header", "true").csv(filePath)
+        Dataset<FileInputLine> fileDataSet = this.sparkSession.read()
+                .option("inferSchema", "true")
+                .option("header", "true").csv(filePath)
                 .as(Encoders.bean(FileInputLine.class));
 
         return fileDataSet;
