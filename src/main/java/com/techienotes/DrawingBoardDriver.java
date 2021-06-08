@@ -17,7 +17,6 @@ import scala.collection.JavaConverters;
 import scala.collection.Seq;
 import scala.collection.mutable.WrappedArray;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

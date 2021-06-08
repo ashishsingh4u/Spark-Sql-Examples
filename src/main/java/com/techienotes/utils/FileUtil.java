@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession;
 
 public class FileUtil {
 
-    private SparkSession sparkSession;
+    private final SparkSession sparkSession;
 
     public FileUtil(SparkSession _sparkSession) {
         this.sparkSession = _sparkSession;

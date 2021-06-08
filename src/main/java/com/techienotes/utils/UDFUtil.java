@@ -9,7 +9,7 @@ import static com.techienotes.config.CustomConstants.COLUMN_UPPERCASE_UDF_NAME;
 
 public class UDFUtil {
 
-    private SQLContext sqlContext;
+    private final SQLContext sqlContext;
 
     public UDFUtil(SQLContext _sqlContext) {
         this.sqlContext = _sqlContext;

@@ -27,7 +27,7 @@ import static org.apache.spark.sql.functions.col;
 class SparkJob {
     private final Logger logger = Logger.getLogger(SparkJob.class);
 
-    private String[] args;
+    private final String[] args;
     private String inputFilePath;
     private UDFUtil udfUtil;
     private FileUtil fileUtil;
