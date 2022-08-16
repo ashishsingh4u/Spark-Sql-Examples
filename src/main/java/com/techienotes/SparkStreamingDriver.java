@@ -1,5 +1,6 @@
 package com.techienotes;
 
+import com.techienotes.cache.LRUCache;
 import com.techienotes.domain.Rate;
 import com.techienotes.mapper.RateFlatMapGroupWithStateFunction;
 import com.techienotes.mapper.RateGroupMapper;
@@ -62,7 +63,7 @@ public class SparkStreamingDriver {
 
         Dataset<Rate> mapGroupsWithState = keyValueGroupedDataset.flatMapGroupsWithState(new RateFlatMapGroupWithStateFunction()
                 , OutputMode.Update()
-                , Encoders.bean(Rate.class)
+                , Encoders.bean(LRUCache.class)
                 , Encoders.bean(Rate.class)
                 , GroupStateTimeout.ProcessingTimeTimeout());
 
